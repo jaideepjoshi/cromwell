@@ -60,9 +60,11 @@ trait EvenBetterPathMethods {
         // When using PosixFilePermissions/FileAttributes with createDirectories, the umask Cromwell happens to be using
         // affects the resulting directory permissions.  This is not the desired behavior, these directories should be
         // world readable/writable/executable irrespective of the umask.
+        /*
         addPermission(PosixFilePermission.OTHERS_READ)
         addPermission(PosixFilePermission.OTHERS_WRITE)
         addPermission(PosixFilePermission.OTHERS_EXECUTE)
+        */
       }
       catch {
         // Race condition that's particularly likely with scatters.  Ignore.
