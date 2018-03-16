@@ -1,7 +1,7 @@
 package wom.types
 
 import spray.json.JsString
-import wom.values.{WomPrimitive, WomPrimitiveFile, WomString, WomValue}
+import wom.values.{WomOptionalValue, WomPrimitive, WomPrimitiveFile, WomString, WomValue}
 
 import scala.util.{Failure, Success, Try}
 

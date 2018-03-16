@@ -1,7 +1,7 @@
 package wom.types
 
 import wom.WomExpressionException
-import wom.values.WomValue
+import wom.values.{WomOptionalValue, WomValue}
 
 import scala.runtime.ScalaRunTime
 import scala.util.{Failure, Success, Try}
@@ -33,6 +33,7 @@ trait WomType {
       case _ if !coercion.isDefinedAt(any) => Failure(new IllegalArgumentException(
         s"No coercion defined from '${ScalaRunTime.stringOf(any, 3)}' of type" +
           s" '${Option(any.getClass.getCanonicalName).getOrElse(any.getClass.getName)}' to '$toDisplayString'."))
+      case WomOptionalValue(_, Some(v)) => coerceRawValue(v)
       case _ => Try(coercion(any))
     }
   }
