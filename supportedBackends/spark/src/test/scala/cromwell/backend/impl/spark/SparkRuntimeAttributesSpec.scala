@@ -1,7 +1,7 @@
 package cromwell.backend.impl.spark
 
 import wdl.draft2.model.Draft2ImportResolver
-import cromwell.backend.{BackendWorkflowDescriptor, MemorySize}
+import cromwell.backend.BackendWorkflowDescriptor
 import wom.RuntimeAttributesKeys._
 import cromwell.core.labels.Labels
 import cromwell.core.{WorkflowId, WorkflowOptions}
